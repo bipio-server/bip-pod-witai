@@ -1,0 +1,31 @@
+{
+  "name": "bip-pod-time",
+  "version": "0.0.1",
+  "description": "Time Pod for Bipio",
+  "keywords": [
+    "bip",
+    "bipio",
+    "pod",
+    "time"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bipio-server/bip-pod-time.git"
+  },
+  "bugs": {
+    "url": "http://github.com/bipio-server/bip-pod-time/issues"
+  },
+  "licenses": [
+    {
+      "type": "GNU GPLv3",
+      "url": "http://www.gnu.org/copyleft/gpl.html"
+    }
+  ],
+  "main": ".",
+  "dependencies": {
+    "bip-pod": ">=0.0.1"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  }
+}

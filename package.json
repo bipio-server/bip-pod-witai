@@ -1,19 +1,19 @@
 {
-  "name": "bip-pod-time",
+  "name": "bip-pod-witai",
   "version": "0.0.1",
-  "description": "Time Pod for Bipio",
+  "description": "WitAI Pod for Bipio",
   "keywords": [
     "bip",
     "bipio",
     "pod",
-    "time"
+    "witai"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/bipio-server/bip-pod-time.git"
+    "url": "git://github.com/bipio-server/bip-pod-witai.git"
   },
   "bugs": {
-    "url": "http://github.com/bipio-server/bip-pod-time/issues"
+    "url": "http://github.com/bipio-server/bip-pod-witai/issues"
   },
   "licenses": [
     {

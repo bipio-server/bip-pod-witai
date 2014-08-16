@@ -1,6 +1,7 @@
 {
   "name": "bip-pod-witai",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "author" : "Michael Pearson",
   "description": "WitAI Pod for Bipio",
   "keywords": [
     "bip",

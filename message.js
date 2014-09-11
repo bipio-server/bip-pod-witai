@@ -19,8 +19,8 @@
 
 function Message(podConfig) {
   this.name = 'message';
-  this.description = 'Message',
-  this.description_long = 'Returns the extracted meaning from a sentence, based on instance data.',
+  this.title = 'Message',
+  this.description = 'Returns the extracted meaning from a sentence, based on instance data.',
   this.trigger = false;
   this.singleton = true;
   this.podConfig = podConfig;
@@ -29,7 +29,7 @@ function Message(podConfig) {
 Message.prototype = {};
 
 Message.prototype.getSchema = function() {
-  return {        
+  return {
     "imports": {
       "properties" : {
         "q" : {
@@ -40,7 +40,8 @@ Message.prototype.getSchema = function() {
           "type" :  "string",
           "description" : "Message ID (optional)"
         }
-      }
+      },
+      "required" : [ "q" ]
     },
     "exports": {
       "properties" : {
@@ -65,12 +66,12 @@ Message.prototype.getSchema = function() {
   }
 }
 
-Message.prototype.invoke = function(imports, channel, sysImports, contentParts, next) {  
-  
-  if (imports.q) {    
+Message.prototype.invoke = function(imports, channel, sysImports, contentParts, next) {
+
+  if (imports.q) {
     var get = this.$resource._httpGet,
-      url = 'https://api.wit.ai/message?q=' + encodeURIComponent(imports.q);    
-      
+      url = 'https://api.wit.ai/message?q=' + encodeURIComponent(imports.q);
+
     if (imports.msg_id) {
       url += '&msg_id=' + imports.msg_id;
     }

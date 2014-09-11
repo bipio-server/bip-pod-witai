@@ -19,8 +19,8 @@
 var Pod = require('bip-pod'),
   WitAI = new Pod({
     name : 'witai', // pod name (action prefix)
-    description : 'Wit.AI',
-    description_long : '<a  href="https://wit.ai">Wit</a> enables developers to add a natural language interface to their app or device in minutes. It’s faster and more accurate than Siri, and requires no upfront investment, expertise, or training dataset.',
+    title : 'Wit.AI',
+    description : '<a  href="https://wit.ai">Wit</a> enables developers to add a natural language interface to their app or device in minutes. It’s faster and more accurate than Siri, and requires no upfront investment, expertise, or training dataset.',
     authType : 'issuer_token',
     authMap : {
         password : 'Bearer Token'

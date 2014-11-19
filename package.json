@@ -1,7 +1,7 @@
 {
   "name": "bip-pod-witai",
-  "version": "0.0.3",
-  "author" : "Michael Pearson",
+  "version": "0.0.4",
+  "author": "Michael Pearson",
   "description": "WitAI Pod for Bipio",
   "keywords": [
     "bip",
@@ -23,9 +23,7 @@
     }
   ],
   "main": ".",
-  "dependencies": {
-    "bip-pod": ">=0.0.1"
-  },
+  "dependencies": {},
   "engines": {
     "node": ">= 0.10.0"
   }

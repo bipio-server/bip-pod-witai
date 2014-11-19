@@ -1,0 +1,62 @@
+{
+  "name": "witai",
+  "title": "Wit.AI",
+  "description": "<a  href=\"https://wit.ai\">Wit</a> enables developers to add a natural language interface to their app or device in minutes. It’s faster and more accurate than Siri, and requires no upfront investment, expertise, or training dataset.",
+  "url": "",
+  "trackDuplicates": false,
+  "config": {},
+  "auth": {
+    "strategy": "issuer_token"
+  },
+  "rpcs": {},
+  "actions": {
+    "message": {
+      "title": "Message",
+      "description": "Returns the extracted meaning from a sentence, based on instance data.",
+      "trigger": "invoke",
+      "config": {
+        "properties": {},
+        "definitions": {}
+      },
+      "exports": {
+        "properties": {
+          "msg_id": {
+            "type": "string",
+            "description": "Message ID"
+          },
+          "msg_body": {
+            "type": "string",
+            "description": "Message Body"
+          },
+          "outcome": {
+            "type": "object",
+            "description": "Outcome"
+          },
+          "confidence": {
+            "type": "number",
+            "description": "Confidence Level"
+          }
+        }
+      },
+      "imports": {
+        "properties": {
+          "q": {
+            "type": "string",
+            "description": "Query"
+          },
+          "msg_id": {
+            "type": "string",
+            "description": "Message ID (optional)"
+          }
+        },
+        "required": [
+          "q"
+        ],
+        "disposition": [
+          "q",
+          "msg_id"
+        ]
+      }
+    }
+  }
+}

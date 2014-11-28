@@ -17,18 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 var Pod = require('bip-pod'),
-  WitAI = new Pod({
-    name : 'witai', // pod name (action prefix)
-    title : 'Wit.AI',
-    description : '<a  href="https://wit.ai">Wit</a> enables developers to add a natural language interface to their app or device in minutes. It’s faster and more accurate than Siri, and requires no upfront investment, expertise, or training dataset.',
-    authType : 'issuer_token',
-    authMap : {
-        password : 'Bearer Token'
-    }
-  });
-
-// Include any actions
-WitAI.add(require('./message.js'));
+  WitAI = new Pod();
 
 // -----------------------------------------------------------------------------
 module.exports = WitAI;

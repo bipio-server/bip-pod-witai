@@ -17,76 +17,30 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-function Message(podConfig) {
-  this.name = 'message';
-  this.title = 'Message',
-  this.description = 'Returns the extracted meaning from a sentence, based on instance data.',
-  this.trigger = false;
-  this.singleton = true;
-  this.podConfig = podConfig;
-}
+function Message() {}
 
 Message.prototype = {};
 
-Message.prototype.getSchema = function() {
-  return {
-    "imports": {
-      "properties" : {
-        "q" : {
-          "type" :  "string",
-          "description" : "Query"
-        },
-        "msg_id" : {
-          "type" :  "string",
-          "description" : "Message ID (optional)"
-        }
-      },
-      "required" : [ "q" ]
-    },
-    "exports": {
-      "properties" : {
-        "msg_id" : {
-          "type" :  "string",
-          "description" : "Message ID"
-        },
-        "msg_body" : {
-          "type" :  "string",
-          "description" : "Message Body"
-        },
-        "outcome" : {
-          "type" :  "object",
-          "description" : "Outcome"
-        },
-        "confidence" : {
-          "type" : "number",
-          "description" : "Confidence Level"
-        }
-      }
-    }
-  }
-}
 
 Message.prototype.invoke = function(imports, channel, sysImports, contentParts, next) {
+  var get = this.$resource._httpGet,
+    url = 'https://api.wit.ai/message?q=' + encodeURIComponent(imports.q);
 
-  if (imports.q) {
-    var get = this.$resource._httpGet,
-      url = 'https://api.wit.ai/message?q=' + encodeURIComponent(imports.q);
-
-    if (imports.msg_id) {
-      url += '&msg_id=' + imports.msg_id;
-    }
-
-    get(
-      url,
-      function(err, resp, headers, statusCode) {
-        next(err, resp);
-      },
-      {
-        'Authorization' : 'Bearer ' + sysImports.auth.issuer_token.password,
-        'Accept' : 'application/vnd.wit.20160202+json'
-      }
-    );
+  if (imports.msg_id) {
+    url += '&msg_id=' + imports.msg_id;
   }
+
+  get(
+    url,
+    function(err, resp, headers, statusCode) {
+      next(err, resp);
+    },
+    {
+      'Authorization' : 'Bearer ' + sysImports.auth.issuer_token.password,
+      'Accept' : 'application/vnd.wit.20160202+json'
+    }
+  );
+
 }
 // -----------------------------------------------------------------------------
 module.exports = Message;

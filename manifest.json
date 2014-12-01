@@ -7,9 +7,15 @@
   "config": {},
   "auth": {
     "strategy": "issuer_token",
-    "authMap" : {
-      "password" : "Bearer Token"
-    }
+    "properties": {
+      "password": {
+        "title": "Bearer Token",
+        "type": "string"
+      }
+    },
+    "disposition": [
+      "password"
+    ]
   },
   "rpcs": {},
   "actions": {

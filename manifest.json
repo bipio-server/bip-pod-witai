@@ -31,19 +31,19 @@
         "properties": {
           "msg_id": {
             "type": "string",
-            "description": "Message ID"
+            "title": "Message ID"
           },
           "msg_body": {
             "type": "string",
-            "description": "Message Body"
+            "title": "Message Body"
           },
           "outcome": {
             "type": "object",
-            "description": "Outcome"
+            "title": "Outcome"
           },
           "confidence": {
             "type": "number",
-            "description": "Confidence Level"
+            "title": "Confidence Level"
           }
         }
       },
@@ -51,11 +51,11 @@
         "properties": {
           "q": {
             "type": "string",
-            "description": "Query"
+            "title": "Query"
           },
           "msg_id": {
             "type": "string",
-            "description": "Message ID (optional)"
+            "title": "Message ID (optional)"
           }
         },
         "required": [

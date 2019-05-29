@@ -1,3 +1,4 @@
+# **NOTICE:** This repository has been **DEPRECATED**. Do not use.
 ![Wit.AI](witai.png) bip-pod-witai
 =======
 
